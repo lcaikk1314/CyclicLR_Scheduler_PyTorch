@@ -10,6 +10,11 @@ from cyclic_lr_scheduler import CyclicLR
 optimizer = Whatever optimizer you want
 
 scheduler = CyclicLR(optimizer, base_lr=0.0001, max_lr=0.01, step_size=10, mode=decay_strategy)
+
+......
+for epoch in range(args.start_epoch, args.epochs):
+        scheduler.step()
+        ......
 ```
 
 + three options for decay_strategy: 'triangular', 'triangular2', 'exp_range'
